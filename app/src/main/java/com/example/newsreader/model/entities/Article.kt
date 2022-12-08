@@ -8,6 +8,6 @@ data class Article(
     val description: String,
     val url: String,
     val urlToImage: String,
-    val publishedAt: LocalDate,
+    val publishedAt: String,
     val content: String,
 )

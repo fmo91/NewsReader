@@ -15,7 +15,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import coil.compose.AsyncImage
 import com.example.newsreader.model.entities.Article
 
 @Composable
@@ -31,11 +30,11 @@ fun ArticleRow(
         val intent = remember { Intent(Intent.ACTION_VIEW, Uri.parse(article.url)) }
 
         Column {
-            AsyncImage(
-                modifier = Modifier.size(150.dp),
-                model = article.urlToImage,
-                contentDescription = "Translated description of what the image contains"
-            )
+//            AsyncImage(
+//                modifier = Modifier.size(150.dp),
+//                model = article.urlToImage,
+//                contentDescription = "Translated description of what the image contains"
+//            )
 
             Text(
                 text = article.title,
