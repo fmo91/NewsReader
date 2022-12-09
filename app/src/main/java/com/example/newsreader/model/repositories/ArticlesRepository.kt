@@ -13,6 +13,16 @@ class ArticlesRepositoryImpl @Inject constructor (
     private val dataSource: RestDataSource,
 ) : ArticlesRepository {
     override suspend fun getArticles(): List<Article> {
-        return dataSource.getArticles().articles
+        return try {
+            dataSource
+                .getArticles(
+                    query = "Apple",
+                    fromDate = "2022-12-08",
+                    sortBy = "popularity",
+                )
+                .articles
+        } catch (e: Exception) {
+            emptyList()
+        }
     }
 }

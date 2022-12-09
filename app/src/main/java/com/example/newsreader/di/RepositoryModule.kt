@@ -14,5 +14,5 @@ abstract class RepositoryModule {
 
     @Binds
     @Singleton
-    abstract fun userRepository(repo: ArticlesRepositoryImpl): ArticlesRepository
+    abstract fun articlesRepository(repo: ArticlesRepositoryImpl): ArticlesRepository
 }

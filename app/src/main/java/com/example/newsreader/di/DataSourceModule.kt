@@ -14,10 +14,11 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class DataSourceModule {
+
     @Singleton
     @Provides
     @Named("baseUrl")
-    fun provideBaseUrl(): String = "https://newsapi.org/v2"
+    fun provideBaseUrl(): String = "https://newsapi.org/v2/"
 
     @Singleton
     @Provides
