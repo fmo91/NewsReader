@@ -16,9 +16,7 @@ fun News(
     val articles = viewModel.articlesFlow.collectAsState().value
 
     LaunchedEffect(key1 = Unit) {
-        println("About to launch effect for loading articles")
         viewModel.loadArticles()
-        println("Received articles")
     }
 
     LazyColumn {
