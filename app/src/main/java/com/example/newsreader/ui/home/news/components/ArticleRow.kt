@@ -2,15 +2,14 @@ package com.example.newsreader.ui.home.news.components
 
 import android.content.Intent
 import android.net.Uri
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -32,9 +31,12 @@ fun ArticleRow(
 
         Column {
             AsyncImage(
-                modifier = Modifier.size(150.dp),
+                modifier = Modifier
+                    .height(150.dp)
+                    .fillMaxWidth(),
                 model = article.urlToImage,
-                contentDescription = "Translated description of what the image contains"
+                contentScale = ContentScale.FillBounds,
+                contentDescription = "Translated description of what the image contains",
             )
 
             Text(
